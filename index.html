@@ -1,11 +1,39 @@
-<html>
-  <head>
-    <ttile>Redirecting to Chrysalis</title>
-    <meta charset="utf-8">
-<meta http-equiv="refresh" content="0; URL=https://chrysalis.keyboard.io">
-<link rel="canonical" href="https://chrysalis.keyboard.io">
-  </head>
-  <body>
-    <a href="https://chrysalis.keyboard.io">If you're not redirected immediately, click to go to Chrysalis</a>.
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting to Chrysalis</title>
+    <script>
+        const CHRYSALIS_URL = 'https://chrysalis.keyboard.io';
+        
+        // Execute immediately instead of waiting for window.onload
+        (function() {
+            try {
+                const targetUrl = CHRYSALIS_URL + location.search;
+                
+                // Update the fallback link
+                document.addEventListener('DOMContentLoaded', () => {
+                    document.querySelector('a').href = targetUrl;
+                });
+                
+                // Perform the redirect
+                location.replace(targetUrl);
+            } catch (error) {
+                console.error('Redirect failed:', error);
+            }
+        })();
+    </script>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            text-align: center;
+            margin: 2em;
+        }
+    </style>
+</head>
+<body>
+    <p>Redirecting to Chrysalis... If you're not redirected automatically, 
+        <a href="https://chrysalis.keyboard.io">click here</a>.</p>
+</body>
 </html>
